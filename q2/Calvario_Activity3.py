@@ -1,0 +1,49 @@
+#Calvario_Activity3.py
+class BankAccount:
+    def __init__(self, account_number: int, balance: float):
+        self.__account_number = account_number
+        self.__balance = 0.0
+        self.set_balance(balance)  # Validates through setter immediately
+
+    # Explicit public setter methods as required by class diagram
+    def set_account_number(self, account_number: int):
+        self.__account_number = account_number
+
+    def set_balance(self, balance: float):
+        if balance >= 0:
+            self.__balance = balance
+        else:
+            # Issue warning statement if balance is negative
+            print("The balance must be not a negative number.")
+
+    # Public getters using the @property decorator as requested
+    @property
+    def account_number(self) -> int:
+        return self.__account_number
+
+    @property
+    def balance(self) -> float:
+        return self.__balance
+
+
+# Execution block matching required sample output format
+if __name__ == "__main__":
+    print("Object of class BankAccount\n")
+    print("a1 = BankAccount(12345, 1000)\n")
+    
+    # Initialize object
+    a1 = BankAccount(12345, 1000)
+    
+    # Display formatted values
+    print("Output:")
+    print("Account 1")
+    print(f"Account Number: {a1.account_number}")
+    print(f"Balance: {a1.balance:.2f}")  # Formatted balance string format
+    print()
+    
+    # Test negative update validation check
+    print("Update balance to -100")
+    a1.set_balance(-100)
+    
+    print(f"Account Number: {a1.account_number}")
+    print(f"Balance: {a1.balance:.2f}")

@@ -1,0 +1,19 @@
+#Calvario_Activity1.py
+class Activity1Showcase:
+    def __init__(self, username, balance, engine_code, school_name, voter_id):
+        # 1. Public attribute
+        self.username = username
+        
+        # 2. Private attribute
+        self.__balance = balance
+        
+        # 3. Protected attribute
+        self._engineCode = engine_code
+        
+        # 4. Public attribute
+        self.schoolName = school_name
+        
+        # 5. Private attribute
+        self.__voterID = voter_id
+
+print("Activity 1 constructor statements successfully mapped!")
